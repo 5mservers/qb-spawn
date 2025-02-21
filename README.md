@@ -6,4 +6,5 @@ This is a restyle to the original qb-spawn script. We wanted to create a nice mo
 ![spawn location](https://i.imgur.com/J8KTTOJ.png)
 
 # New Character Apartment Choice
+![apartment location](https://i.imgur.com/BdvYD7V.png)
 
