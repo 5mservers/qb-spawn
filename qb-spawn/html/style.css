@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+#spawn-locations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Update the overlay gradient */
+#spawn-locations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* Increased height to match your reference */
+    background: linear-gradient(179deg, #1B1E27 2.11%, rgba(0, 0, 0, 0) 63.92%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Update spawn-header to appear above the overlay */
+.spawn-header {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.spawn-header p {
+    color: white;
+    font-size: 2.5vh;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.location-boxes {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 50px;
+    z-index: 2; /* Ensure boxes appear above the overlay */
+}
+
+.location-box {
+    width: 200px;
+    height: 120px;
+    background: rgba(178, 199, 250, 0.2);
+    border: 1px solid rgba(178, 200, 250, 0.785);
+    box-shadow: 0 0 15px rgba(178, 199, 250, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 10px;
+}
+
+.location-box:hover,
+.location-box.selected {
+    background: rgba(178, 199, 250, 0.2);
+    border: 1px solid rgba(178, 200, 250, 0.785);
+    box-shadow: 0 0 15px rgba(178, 199, 250, 0.2);
+    transform: scale(1.05);
+}
+
+.location-label {
+    color: white;
+    font-size: 1.2vh;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.spawn-buttons {
+    position: absolute;
+    top: calc(20% + 140px); /* 20% is where boxes start + 120px box height + 20px gap */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Additional gap between boxes and button */
+}
+
+.spawn-button {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 1.2vh;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    background: rgba(178, 199, 250, 0.2) !important; /* Match location box style */
+    border: 1px solid rgba(178, 199, 250, 0.4) !important;
+    box-shadow: 0 0 15px rgba(178, 199, 250, 0.2) !important;
+    color: white;
+}
+
+.spawn-button:hover {
+    transform: scale(1.05);
+    background-color: #0da994a6 !important;
+}
+
+.slide-top-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+.slide-top-fade-leave-active {
+    transition: all 0.5s cubic-bezier(1, 0.7, 0.9, 1);
+}
+.slide-top-fade-enter-from,
+.slide-top-fade-leave-to {
+    transform: translateY(-10%);
+    opacity: 0!important;
+}
